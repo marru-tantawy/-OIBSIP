@@ -1,0 +1,83 @@
+:root {
+  --bg: #1b2430;
+  --body: #232f3e;
+  --screen: #0f161e;
+  --key: #324255;
+  --key-hover: #3d5068;
+  --op: #e0a030;
+  --op-hover: #f0b44a;
+  --clear: #8a3d3d;
+  --clear-hover: #a14a4a;
+  --text: #f2f5f8;
+  --muted: #8fa0b3;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  padding: 1rem;
+}
+
+.calculator {
+  width: 100%;
+  max-width: 360px;
+  background: var(--body);
+  padding: 1.2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------- Screen ---------- */
+.screen {
+  background: var(--screen);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.1rem;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.history { color: var(--muted); font-size: 1rem; min-height: 1.4rem; word-break: break-all; text-align: right; }
+.current { font-size: 2.4rem; word-break: break-all; text-align: right; line-height: 1.2; }
+.current.error { font-size: 1.3rem; color: #ff8a8a; }
+
+/* ---------- Buttons: CSS Grid ---------- */
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.7rem;
+}
+
+.key {
+  font-size: 1.4rem;
+  padding: 1rem 0;
+  border: none;
+  border-radius: 12px;
+  background: var(--key);
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+.key:hover { background: var(--key-hover); }
+.key:active { transform: scale(0.96); }
+.key:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+
+.key-op { background: var(--op); color: #1b2430; font-weight: 600; }
+.key-op:hover { background: var(--op-hover); }
+
+.key-clear { background: var(--clear); }
+.key-clear:hover { background: var(--clear-hover); }
+
+.key-equals { grid-column: 4; grid-row: 4 / span 2; background: #2f9e6e; font-weight: 600; }
+.key-equals:hover { background: #3bb683; }
+
+.key-zero { grid-column: span 2; }
