@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card">
+    <h1>Create Account</h1>
+    <p class="subtitle">Sign up to get access to your dashboard.</p>
+
+    <!-- novalidate: validation messages are handled by JavaScript -->
+    <form id="register-form" novalidate>
+      <div class="field">
+        <label for="username">Username or email</label>
+        <input type="text" id="username" autocomplete="username" placeholder="e.g. example@example.com">
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" autocomplete="new-password" placeholder="Your password">
+        <small class="hint">At least 8 characters and 1 number.</small>
+      </div>
+
+      <p id="message" class="message" role="alert"></p>
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+
+    <p class="switch">Already have an account? <a href="login.html">Login</a></p>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

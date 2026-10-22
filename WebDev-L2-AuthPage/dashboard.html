@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card dashboard">
+    <span class="badge">Protected page</span>
+    <h1>Welcome, <span id="welcome-name"></span>!</h1>
+    <p class="subtitle">You are logged in. Only signed-in users can see this page.</p>
+
+    <button type="button" id="logout-btn" class="btn btn-secondary">Logout</button>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
